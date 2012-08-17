@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def body_css_id
+    controller_path.gsub('/', '_').camelize(:lower) + "Body"
+  end
+
   def flash_messages
     flash.collect do |key, msg|
       content_tag :p, msg, id: key, class: "flash_message"

@@ -48,6 +48,15 @@
 
     <%= section  do %>
       <div class="field">
+        <%= f.label :published_at %><br/>
+        <%= f.date_select :published_at, :use_short_month => true %>
+      </div>
+    <% end %>
+
+    <hr/>
+
+    <%= section  do %>
+      <div class="field">
         <%= f.label :slug, "Url" %><br/>
         <%= f.text_field :slug, :size => 27 %>
       </div>
