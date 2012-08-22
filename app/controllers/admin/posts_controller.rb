@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::BaseController
 
-  before_filter :load_resources, :only => %w(new create edit update)
+  before_filter :load_resources, only: %w(new create edit update)
 
   def index
     @posts = Post.all
@@ -9,7 +9,10 @@ class Admin::PostsController < Admin::BaseController
 
   def show
     @post = Post.find(params[:id])
-    render :layout => "application"
+    
+    respond_with @post do |format|
+      format.html { render :layout => "application" }
+    end
   end
 
   def new
