@@ -11,6 +11,7 @@ Producer::Application.routes.draw do
   end
 
   namespace :admin do
+    root to: "posts#index"
     resources :posts
     resources :categories, except: [:show]
   end

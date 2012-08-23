@@ -1,0 +1,22 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  empty: "We don't have any %{collection} yet."
+  confirm: Are you sure?
+  edit: Edit
+  destroy: Destroy
+  new: Create %{model}
+  cancel: Cancel
+  error_message_header: "%{count} error(s) prohibited this %{model} from being saved:"
+
+  admin:
+    posts:
+      new:
+        title: New post
+      edit:
+        title: Editing post
+      form:
+        categories: Publish with these categories
+        slug: Set a custom url
+        author: "Post by:"

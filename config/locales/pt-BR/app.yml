@@ -1,0 +1,41 @@
+pt-BR:
+  empty: "Não temos nenhum %{model} ainda."
+  confirm: Tem certeza?
+  edit: Editar
+  destroy: Apagar
+  cancel: Cancelar
+  new: Criar %{model}
+  error_message_header: "%{count} erro(s) impediram este %{model} de ser gravado:"
+
+  admin:
+    posts:
+      new:
+        title: Novo post
+      edit:
+        title: Editando post
+      form:
+        categories: Publicar com estas categorias
+        slug: Defina uma url
+        author: "Post por:"
+
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      category:
+        one: Categoria
+        other: Categorias
+      post:
+        one: Post
+        other: Posts
+
+    attributes:
+      post:
+        title: "Título"
+        body: "Conteúdo"
+        excerpt: "Resumo"
+        published_at: "Publicado em"
+        slug: "Url customizada"
+        author: "Autor"
+        draft: "Rascunho"
