@@ -14,4 +14,8 @@ module ApplicationHelper
     render partial: "shared/error_messages", locals: { resource: resource }
   end
 
+  def textilize(text)
+    RedCloth.new(text).to_html.html_safe
+  end
+
 end

@@ -8,4 +8,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'paperclip'
+gem 'RedCloth'
 gem 'jquery-rails'
+gem 'menu_builder'
