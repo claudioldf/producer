@@ -11,16 +11,21 @@
 
   <div id="wrapper">
     <div id="header">
-      <div id="main-nav">
-        <%= menu do |m| %>
-          <%= m.dashboard 'Dashboard', "#" %>
-          <%= m.posts 'Posts', admin_posts_path %>
-          <%= m.assets 'Assets', admin_assets_path %>
-          <%= m.changelog 'Changelog', "#" %>
-          <%= m.faqs 'FAQ', "#" %>
-          <%= m.inquiries 'Inquiries', "#" %>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+        <div id="main-nav">
+          <%= menu do |m| %>
+            <%= m.dashboard 'Dashboard', "#" %>
+            <%= m.posts 'Posts', admin_posts_path %>
+            <%= m.assets 'Assets', admin_assets_path %>
+            <%= m.inquiries 'Inquiries', "#" %>
+            <%= m.users 'Users', admin_users_path %>
+          <% end %>
+        </div>
+
+        <div id="user-bar">
+          <%= link_to "Logout", destroy_user_session_path, :method => "delete" %>
+        </div>
+      <% end %>
     </div>
 
     <div id="content-wrapper">

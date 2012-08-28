@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: "User", foreign_key: "author_id"
   has_and_belongs_to_many :categories
 
+  delegate :full_name, to: :author, prefix: true
+
   def self.published
     where("draft = ? AND published_at < ?", false, Time.current)
   end
@@ -24,7 +26,7 @@ class Post < ActiveRecord::Base
   def to_param
     "#{id}-#{slug}"
   end
-
+  
   protected
   
   def generate_slug

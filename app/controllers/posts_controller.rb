@@ -9,7 +9,9 @@ class PostsController < ApplicationController
 
     @posts = @posts.published
     
-    respond_with @posts
+    respond_with @posts do |format|
+      format.atom
+    end
   end
 
   def show

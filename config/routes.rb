@@ -1,5 +1,12 @@
 Producer::Application.routes.draw do
 
+  scope '/admin' do
+    devise_for :users, :controllers => {
+      :sessions => "admin/sessions",
+      :passwords => "admin/passwords"
+    }
+  end
+
   root to: 'pages#index'
   get "pages/index"
   match '/home'   => "pages#index",  :as => :home
@@ -12,6 +19,7 @@ Producer::Application.routes.draw do
 
   namespace :admin do
     root to: "posts#index"
+    resources :users, :except => [:show]
     resources :posts
     resources :categories, except: [:show]
     resources :assets
