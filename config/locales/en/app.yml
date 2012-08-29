@@ -20,3 +20,13 @@ en:
         categories: Publish with these categories
         slug: Set a custom url
         author: "Post by:"
+
+  contacts:
+    new:
+      subjects:
+        signup: I have a question before I sign up
+        request: I want to request a feature
+        billing: I have a billing question
+        confused: I'm confused about how something works
+        broken: I think something is broken
+        other: Other
