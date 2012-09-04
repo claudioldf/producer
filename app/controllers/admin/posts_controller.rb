@@ -3,7 +3,7 @@ class Admin::PostsController < Admin::BaseController
   before_filter :load_resources, only: %w(new create edit update)
 
   def index
-    @posts = Post.all
+    @posts = Post.paginate page: params[:page]
     respond_with @posts
   end
 
@@ -44,12 +44,24 @@ class Admin::PostsController < Admin::BaseController
     respond_with @post, :location => admin_posts_path
   end
 
+  def assets
+    @assets = paginated_assets
+
+    respond_to do |format|
+      format.js 
+    end
+  end
+
   protected
 
   def load_resources
     @authors = User.all
     @categories = Category.all
-    @assets = Asset.order("created_at DESC")
+    @assets = paginated_assets
+  end
+
+  def paginated_assets
+    Asset.paginate page: params[:page], per_page: 4
   end
 
 end

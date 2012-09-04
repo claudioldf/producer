@@ -2,7 +2,7 @@ class Admin::AssetsController < Admin::BaseController
   menu_item :assets
 
   def index
-    @assets = Asset.all
+    @assets = Asset.paginate page: params[:page]
     respond_with @assets
   end
 

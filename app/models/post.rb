@@ -15,6 +15,8 @@ class Post < ActiveRecord::Base
 
   delegate :full_name, to: :author, prefix: true
 
+  default_scope order: "published_at DESC"
+
   def self.published
     where("draft = ? AND published_at < ?", false, Time.current)
   end

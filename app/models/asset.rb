@@ -2,7 +2,8 @@ class Asset < ActiveRecord::Base
   attr_accessible :description, :title, :document
 
   validates_presence_of :title
-  
+  default_scope order: "created_at DESC"
+
   has_attached_file :document, styles: {
     medium: "300x300#",
     thumb: "50x50#"

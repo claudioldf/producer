@@ -11,6 +11,14 @@
 //= require_self
 
 $(function(){
+  var toggleLoading = function() { 
+    $(".loading").toggle(); 
+  }
+
+  $("#media")
+    .bind("ajax:loading", toggleLoading)
+    .bind("ajax:complete", toggleLoading);
+
   $(".media").insertTextileImageTo("#post_body");
 });
 
