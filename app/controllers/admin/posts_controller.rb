@@ -9,7 +9,7 @@ class Admin::PostsController < Admin::BaseController
 
   def show
     @post = Post.find(params[:id])
-    
+
     respond_with @post do |format|
       format.html { render :layout => "application" }
     end
@@ -48,7 +48,7 @@ class Admin::PostsController < Admin::BaseController
     @assets = paginated_assets
 
     respond_to do |format|
-      format.js 
+      format.js
     end
   end
 
