@@ -9,7 +9,7 @@ User.create!(
 )
 
 1.upto 10 do |i|
-  Image.create!(
+  Asset.create!(
     :title => "Image #{i}",
     :document => File.open(Rails.root.join("app/assets/images/asset#{i}.png"))
   )
