@@ -9,9 +9,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-# group :development do
-#   gem "ruby-debug19"
-# end
+group :production do
+  gem 'mysql2'
+end
+
+group :development do
+  gem 'capistrano'
+  # gem "ruby-debug19", :require => "ruby-debug"
+end
 
 gem 'paperclip'
 gem 'RedCloth'

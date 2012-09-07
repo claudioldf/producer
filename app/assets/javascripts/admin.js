@@ -7,7 +7,6 @@
 
 // APP
 
-//= require_tree ./admin
 //= require_self
 
 $(function(){
