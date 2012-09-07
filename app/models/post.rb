@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
 
   attr_accessible :body, :excerpt, :title, 
-    :author_id, :category_ids, :slug, :draft, :published_at
+    :author_id, :category_ids, :slug, :draft, :published_at,
+    :categories, :author
 
   validates_presence_of :title, :body, :author, :slug
   validates_associated :author
