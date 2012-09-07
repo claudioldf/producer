@@ -49,3 +49,4 @@ development and startup speed for larger applications
 <p>Speed is now pretty good across the board except for part of Arel that Active Record now depends on.
 We’ll be making sure we get performance of Active Record back to at least 2.3 levels before release.</p>
   }
+)
